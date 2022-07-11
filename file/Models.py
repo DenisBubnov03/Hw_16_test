@@ -1,4 +1,5 @@
-from SQLalchemy import db
+from file.SQLalchemy import db
+
 
 class User(db.Model):
     __tablename__ = 'user'
@@ -12,14 +13,15 @@ class User(db.Model):
 
     def get_dict(self):
         return {
-            "id" : self.id,
-            "first_name" : self.first_name,
-            "last_name" : self.last_name,
-            "age" : self.age,
-            "email" : self.email,
-            "role" : self.role,
-            "phone" : self.phone,
+            "id": self.id,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "age": self.age,
+            "email": self.email,
+            "role": self.role,
+            "phone": self.phone,
         }
+
 
 class Offer(db.Model):
     __tablename__ = 'offer'
@@ -29,13 +31,13 @@ class Offer(db.Model):
 
     def get_dict(self):
         return {
-            "id" : self.id,
-            "order_id" : self.order_id,
-            "executor_id" : self.executor_id,
+            "id": self.id,
+            "order_id": self.order_id,
+            "executor_id": self.executor_id,
         }
 
 
-class Order():
+class Order(db.Model):
     __tablename__ = 'order'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
@@ -50,12 +52,12 @@ class Order():
     def get_dict(self):
         return {
             "id": self.id,
-            "name" : self.name,
-            "description" : self.description,
-            "start_date" : self.start_date,
-            "end_date" : self.end_date,
-            "adress" : self.address,
-            "price" : self.price,
-            "customer_id" : self.customer_id,
-            "executor_id" : self.executor_id,
-            }
+            "name": self.name,
+            "description": self.description,
+            "start_date": self.start_date,
+            "end_date": self.end_date,
+            "adress": self.address,
+            "price": self.price,
+            "customer_id": self.customer_id,
+            "executor_id": self.executor_id,
+        }
